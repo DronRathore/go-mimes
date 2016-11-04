@@ -1,7 +1,6 @@
 package mimes
 import (
 	"strings"
-	"fmt"
 )
 var mimeslist = map[string]string{
 	".x3d" : "application/vnd.hzn-3d-crossword",
