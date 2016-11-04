@@ -3,7 +3,7 @@ import (
 	"strings"
 	"fmt"
 )
-var mimes = map[string]string{
+var mimeslist = map[string]string{
 	".x3d" : "application/vnd.hzn-3d-crossword",
 	".3gp" : "video/3gpp",
 	".3g2" : "video/3gpp2",
@@ -694,7 +694,7 @@ var mimes = map[string]string{
 
 func GetMimeType(url string) string {
 	var extension = url[strings.LastIndex(url, "."):]
-	var mime = mimes[extension]
+	var mime = mimeslist[extension]
 	if mime != "" {
 		return mime
 	} else {
