@@ -696,7 +696,7 @@ func GetMimeType(url string) string {
 		return ""
 	}
 	var extension = url[strings.LastIndex(url, "."):]
-	if mime, ok = mimeslist[extension]; ok {
+	if mime, ok := mimeslist[extension]; ok {
 		return mime
 	} else {
 		return ""
