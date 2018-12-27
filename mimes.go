@@ -692,9 +692,11 @@ var mimeslist = map[string]string{
 }
 
 func GetMimeType(url string) string {
+	if strings.LastIndex(url, ".") == -1 {
+		return ""
+	}
 	var extension = url[strings.LastIndex(url, "."):]
-	var mime = mimeslist[extension]
-	if mime != "" {
+	if mime, ok = mimeslist[extension]; ok {
 		return mime
 	} else {
 		return ""
